@@ -1,10 +1,15 @@
 {
-  "name": "${PROJECT_NAME}",
+  "name": "multi-tenant-frontend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "themes/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "private": true
+    "dev": "npm run dev --workspace=apps/player-shell",
+    "build": "npm run build --workspace=apps/player-shell",
+    "test": "npm run test --workspace=apps/player-shell",
+    "lint": "npm run lint --workspace=apps/player-shell"
+  }
 }

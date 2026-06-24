@@ -1,0 +1,171 @@
+.billing-page__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-6);
+}
+
+.billing-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+}
+
+/* States */
+.billing-page__state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-4);
+  min-height: 40vh;
+  text-align: center;
+}
+
+.billing-page__state-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.billing-page__state--loading {
+  color: var(--color-text-muted);
+}
+
+.billing-page__state--error {
+  color: var(--color-error);
+}
+
+.billing-page__state--empty {
+  color: var(--color-text-muted);
+}
+
+.billing-page__spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: billing-spin 0.8s linear infinite;
+}
+
+@keyframes billing-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Data list */
+.billing-page__dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-sm);
+}
+
+.billing-page__dl dt {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+}
+
+.billing-page__dl dd {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Badge */
+.billing-page__badge {
+  display: inline-block;
+  padding: 0.15em 0.6em;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: var(--font-weight-semibold);
+  text-transform: capitalize;
+}
+
+.billing-page__badge--active {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.billing-page__badge--past_due {
+  background-color: #fef9c3;
+  color: #854d0e;
+}
+
+.billing-page__badge--cancelled {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.billing-page__badge--trialing {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+/* Alerts */
+.billing-page__alert {
+  border-radius: var(--radius-md);
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-4);
+}
+
+.billing-page__alert--success {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.billing-page__alert--error {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+/* Form */
+.billing-page__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.billing-page__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.billing-page__input {
+  padding: 0.625rem 0.875rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  width: 100%;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.billing-page__input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.billing-page__input--error {
+  border-color: var(--color-error);
+}
+
+.billing-page__input--error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.billing-page__input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.billing-page__field-error {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  font-weight: var(--font-weight-medium);
+}
